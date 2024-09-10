@@ -16,7 +16,7 @@ const ItemView = () => {
           <div className="container">
             <div className="row">
               <div className="col-10">
-                <Navbar />
+                <SideBar />
               </div>
     
               <div className="col-10">
@@ -97,7 +97,7 @@ const ItemView = () => {
         </div>
 
         <div className="col-2">
-          <Bag />
+          <DashboardBag />
         </div>
       
     </>
