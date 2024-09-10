@@ -1,10 +1,14 @@
 // redux/store.js
 import { configureStore } from '@reduxjs/toolkit';
-import sliceReducer from './slices/slice'; // Make sure this import is correct
+import sliceReducer from './slices/slice'; 
+import cartReducer from './slices/cartSlice';
+
+
+
 
 const store = configureStore({
   reducer: {
-    slice: sliceReducer, // Use the actual slice reducer
+    cart: cartReducer, // Use the actual slice reducer
   },
 });
 
