@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './Cart.css';
+import './CartPage.css';
 
 // CartItem component to display each item in the cart
 const CartItem = ({ item, onUpdateQuantity }) => {
