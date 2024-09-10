@@ -2,12 +2,12 @@ import React from "react";
 import "../styles/DashboardBag.css";
 import cartbag from '../Assets/cartbag.png';
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
+// import { useSelector } from "react-redux";
 
 
 
-function DashboardBag() {
-  const bagItems = useSelector((state) => state.cart.cartItems); 
+function DashboardBag({bagItems}) {
+  
     return (
       <>
       <div className="vertical-line"></div>
