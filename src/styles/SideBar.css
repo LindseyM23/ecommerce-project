@@ -4,6 +4,9 @@
     border-radius: 8px;
     background: var(--ui-white, #FFFFFF);
     margin-right: 257px; 
+    margin-left: 20px;
+    margin-top: 9px;
+    margin-bottom: 10px;
     display: flex;
     flex-direction: column;
     align-items: left;
