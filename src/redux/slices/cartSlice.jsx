@@ -2,17 +2,14 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 
-// Initial state of the cart
-const initialState = {
-  cartItems: [],
-};
-
 // Create the cart slice
 const cartSlice = createSlice({
   name: 'cart',
-  initialState,
+  initialState:{
+    cartItems:[],
+  },
   reducers: {
-    handleAddToBag: (state, action) => {
+    addItem: (state, action) => {
       state.cartItems.push(action.payload); // Add the item to the cart
     },
     removeFromCart: (state, action) => {
@@ -24,7 +21,7 @@ const cartSlice = createSlice({
 });
 
 // Export the actions
-export const { handleAddToBag, removeFromCart } = cartSlice.actions;
+export const { addItem, removeFromCart } = cartSlice.actions;
 
 // Export the reducer
 export default cartSlice.reducer;

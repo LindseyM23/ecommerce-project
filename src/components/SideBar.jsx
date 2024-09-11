@@ -42,7 +42,7 @@ function SideBar() {
                 </div>
             </div>
             <div className="nav-link-bottom">
-                <Link to="/dashboard" className="nav-link-2">
+                <Link to="/" className="nav-link-2">
                     <img className="vector-5" src={logoutIcon} alt="Nav Link 3" />
                     {isExpanded && <span className="nav-text">LogOut</span>}
                 </Link>

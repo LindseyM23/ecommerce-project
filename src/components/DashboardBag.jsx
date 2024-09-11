@@ -2,12 +2,16 @@ import React from "react";
 import "../styles/DashboardBag.css";
 import cartbag from '../Assets/cartbag.png';
 import { Link } from "react-router-dom";
-// import { useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 
 
 
-function DashboardBag({bagItems}) {
-  
+
+
+
+function DashboardBag() {
+  const cartItems = useSelector(state => state.cart.cartItems);
+  console.log("Redux Bag Items:", cartItems);
     return (
       <>
       <div className="vertical-line"></div>
@@ -15,8 +19,8 @@ function DashboardBag({bagItems}) {
 <div className="bag-header">
       <h2>Bag</h2>
       <div className="bag-items">
-        {bagItems.length > 0 ? (
-          bagItems.map((item, index) => (
+        {cartItems.length > 0 ? (
+          cartItems.map((item, index) => (
             <img 
             key={index} 
             src={item} 
