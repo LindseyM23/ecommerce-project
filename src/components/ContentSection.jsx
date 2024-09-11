@@ -10,10 +10,9 @@ import bluephone from '../Assets/bluephone.png';
 import rephone from '../Assets/redphone.png';
 import whitephone from '../Assets/whitephone.png';
 import addbagIcon from '../Assets/addbagIcon.png';
-
-
 import { Link } from "react-router-dom";
-
+import { useDispatch } from 'react-redux';
+import { addItem } from '../redux/slices/cartSlice';
 
 const products = [
   {
@@ -80,11 +79,10 @@ const products = [
 function ContentSection(){
 
   // initiallizing redux ddispach
-  // const dispatch = useDispatch();
 
-
-  // this function helps the search bar filter products too show the ones that fit the description
-  const [filteredProducts, setFilteredProducts] = useState(products);
+ // this function helps the search bar filter products too show the ones that fit the description
+ const [filteredProducts, setFilteredProducts] = useState(products);
+ const dispatch = useDispatch();
 
   const handleSearchChange = (query) => {
     const filtered = products.filter(product =>
@@ -92,12 +90,15 @@ function ContentSection(){
     );
     setFilteredProducts(filtered);
   };
-
   // this function helps us show the product image on the dashboard bag when selected
   const [bagItems, setBagItems] = useState([]);
+
   const handleAddToBag = (product) => {
-    setBagItems([...bagItems, product.image]); 
+    dispatch(addItem(product.image)); 
+    setBagItems([...bagItems, product.image]);
+    
   };
+
 
  
   
@@ -117,7 +118,7 @@ function ContentSection(){
           filteredProducts.map((product, index) =>  (
         <div className="item-card" key={index}>
           <div className="product-image">
-            <Link to={`/product/${product.name}`}>
+            <Link to={`/product/${index}`} state={{product}}>
             <img
               className="product-image-content"
               src={product.image}
@@ -136,7 +137,7 @@ function ContentSection(){
                   className="action-icon"
                   src={addbagIcon}
                   alt="Buy Now"
-                  onClick={() => handleAddToBag(product)} 
+                  onClick={() => handleAddToBag(product)}
                 />
               </div>
             </div>
