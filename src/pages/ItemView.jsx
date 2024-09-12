@@ -7,7 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 const ItemView = () => {
     const { state } = useLocation();
-    const { product: data } = state;
+     const { product: data } = state;
   
     console.log(data);
   

@@ -1,10 +1,13 @@
 import './index.css';
+// import Dashboard from './pages/Dashboard';
+import Routes from './Routes';
+// import { Router } from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App">
-      <h1>hi</h1>
-    </div>
+  
+    <Routes/>
+     
   );
 }
 
