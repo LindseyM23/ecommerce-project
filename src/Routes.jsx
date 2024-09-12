@@ -7,6 +7,7 @@ import CartPage from './pages/CartPage';
 import ContentSection from "./components/ContentSection";
 import ItemView from "./pages/ItemView";
 import DashboardBag from "./components/DashboardBag";
+// import checkout from "./components/checkout";
 
 function AppRoutes() {
     return (
@@ -18,7 +19,9 @@ function AppRoutes() {
                     <Route path="/" element={<Dashboard />} />
                     <Route path="/cart" element={<CartPage />} />
                    <Route path="/product" element={<ItemView/>}/>
-<Route path="/dashboard-bag" element={<DashboardBag/>}/>
+                   <Route path="/dashboard-bag" element={<DashboardBag/>}/>
+                   {/* <Route path="/checkout" element={<checkout/>}/> */}
+                
                 </Routes>
                 </div>
         </Router>
