@@ -3,7 +3,7 @@ import SideBar from '../components/SideBar';
 import DashboardBag from '../components/DashboardBag';
 import Rating from '../components/Rating';
 import { useLocation, Link } from 'react-router-dom';
-// import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 const ItemView = () => {
     const { state } = useLocation();
