@@ -1,93 +1,95 @@
-.contentTop{
+.top-area{
     display: flex;
-    flex: 1;
 }
 
-.contentTop .details{
-    margin-left: 5%;
+.img-area{
+    display: flex;  
 }
 
-.contentTop .details h2{
-    color: rgb(26, 31, 0.5);
-    padding-bottom: 20px;
+.img-gallery{
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
 }
 
-.smallImgs .previewImg {
-    width: 50px;
-    height: 50px;
+.img-gallery img{
+    width: 80px;
+    height: 90px;
     background-color: white;
-    border-radius: 10px;
+    border-radius: 15px;
+    margin-top: 10px;
 }
 
-.smallImgs .previewImg img{
-    width: 50px;
-    height: 50px;
-}
-
-.bigImg {
-    width: 300px;
-    height: 300px;
-    margin-left: 40px;
+.main-img img{
+    width: 400px;
+    height: 400px;
     background-color: white;
-    border-radius: 20px;
+    border-radius: 15px;
+    margin: 10px 40px;
+
 }
 
-.bigImg img{
-    width: 300px;
-    height: 300px;
+.text-content .header{
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 10px;
 }
 
-.contentTop .details h3{
+.text-content .header h2{
+    color: rgba(26, 31, 22, 0.5);
+}
+
+.text-content h3{
     color: #12805D;
-
+    font-size: 20px;
+}
+.text-content span{
+position: relative;
+top: 3px;
+left: 1rem;
 }
 
-.contentBottom .description{
-    margin-top: 20px;
-}
-
-.contentBottom hr{
-    border: 2px solid black;
-}
-
-.contentBottom .description hr{
-    width: 20%;
-    margin-left: 10px;
-}
-
-.contentBottom .description p{
-    margin-left: 10px;
-}
-
-.contentTop .details h3 span{
-    font-size: 15px;
-}
-
-.contentTop .details .button button{
+.text-content button{
     background-color: black;
-    color: white;
+    color: white;     
     width: 150px;
-    height: 50px;
+    height: 40px;
     border-radius: 14px;
     border-style: solid;
     font-size: 18px;
+    margin-top: 20%;
+    float: right;
 }
 
-.contentTop .details .button .bagIcon{
+.text-content .bagIcon{
     margin-bottom: 5px;
 }
 
-a:hover{
+.bottom-area hr {
+    height: 3px;
+    border-style: solid;
+    border-color: hwb(0 0% 100%);
+    background-color: hwb(0 0% 100%);
+    border-radius: 20px;
+}
+
+.back-text{ 
     color: black;
     text-decoration: none;
 }
 
-a:visited{
+.back-text{
     color: black;
     text-decoration: none;
 }
-a{
+
+.back-text{
     color: black;
     text-decoration: none;
     margin-bottom: 15px;
+  
+}
+
+.back-button span{
+ font-size: 18px;
+ position: absolute;
 }
