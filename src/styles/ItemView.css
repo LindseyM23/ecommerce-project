@@ -1,0 +1,95 @@
+.top-area{
+    display: flex;
+}
+
+.img-area{
+    display: flex;  
+}
+
+.img-gallery{
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+.img-gallery img{
+    width: 80px;
+    height: 90px;
+    background-color: white;
+    border-radius: 15px;
+    margin-top: 10px;
+}
+
+.main-img img{
+    width: 400px;
+    height: 400px;
+    background-color: white;
+    border-radius: 15px;
+    margin: 10px 40px;
+
+}
+
+.text-content .header{
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.text-content .header h2{
+    color: rgba(26, 31, 22, 0.5);
+}
+
+.text-content h3{
+    color: #12805D;
+    font-size: 20px;
+}
+.text-content span{
+position: relative;
+top: 3px;
+left: 1rem;
+}
+
+.text-content button{
+    background-color: black;
+    color: white;     
+    width: 150px;
+    height: 40px;
+    border-radius: 14px;
+    border-style: solid;
+    font-size: 18px;
+    margin-top: 20%;
+    float: right;
+}
+
+.text-content .bagIcon{
+    margin-bottom: 5px;
+}
+
+.bottom-area hr {
+    height: 3px;
+    border-style: solid;
+    border-color: hwb(0 0% 100%);
+    background-color: hwb(0 0% 100%);
+    border-radius: 20px;
+}
+
+.back-text{ 
+    color: black;
+    text-decoration: none;
+}
+
+.back-text{
+    color: black;
+    text-decoration: none;
+}
+
+.back-text{
+    color: black;
+    text-decoration: none;
+    margin-bottom: 15px;
+  
+}
+
+.back-button span{
+ font-size: 18px;
+ position: absolute;
+}
