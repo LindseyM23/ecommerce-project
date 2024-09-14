@@ -5,7 +5,7 @@ import '../styles/CartPage.css';
 import '../components/SideBar.jsx';
 
 const CartItem = ({ item, onUpdateQuantity, onRemove }) => {
-  return (
+  return (  
     <div className="cart-item">
       <div className="item-details">
         <h3>{item.name}</h3>
@@ -48,6 +48,7 @@ const CartPage = () => {
   ).toFixed(2);
 
   return (
+   
     <div className="cart-container">
       <h2>Check your Bag Items</h2>
       {cartItems.length === 0 ? (
@@ -67,6 +68,8 @@ const CartPage = () => {
       </div>
       <button className="checkout-button">Checkout</button>
     </div>
+   
+    
   );
 };
 
