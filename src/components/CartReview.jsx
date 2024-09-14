@@ -1,4 +1,4 @@
-// CartReview.jsx
+
 import React from 'react';
 
 const CartReview = ({ cart }) => (

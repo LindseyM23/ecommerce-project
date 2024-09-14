@@ -2,9 +2,9 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { updateShippingAddress, updatePaymentMethod } from './redux/checkoutSlice';
-import ShippingAddressForm from './ShippingAddressForm';
-import PaymentMethodSelector from './PaymentMethodSelector';
-import CartReview from './CartReview';
+import ShippingAddressForm from '.components/ShippingAddressForm';
+import PaymentMethodSelector from '.components/PaymentMethodSelector';
+import CartReview from '.components/CartReview';
 
 const Checkout = () => {
   const dispatch = useDispatch();

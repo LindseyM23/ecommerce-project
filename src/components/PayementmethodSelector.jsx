@@ -1,4 +1,4 @@
-// PaymentMethodSelector.jsx
+
 import React from 'react';
 
 const PaymentMethodSelector = ({ paymentMethod, onPaymentChange }) => (
