@@ -3,7 +3,7 @@
 .bag-area {
     display: flex;
     flex-direction: column;
-   width: 300px;
+   width: 270px;
     max-width: 300px; 
     background:#EDEDED;  
     border-radius: 8px;
@@ -64,11 +64,11 @@
 .cta-button {
     display: flex;
     align-items: center;
-    background-color: black;
+    background-color: #333333;
     color: #fff;
     border: none;
     border-radius: 9px;
-    padding: 8px 16px;
+    padding: 12px 50px;
     cursor: pointer;
     font-size: 16px;
 }
@@ -79,7 +79,7 @@
 }
 
 .cta-icon-img {
-    width: 20px; 
+    width: 10px; 
     height: 20px; 
 }
 

@@ -3,16 +3,19 @@ import {  Link, useParams } from 'react-router-dom';
 import '../styles/ItemView.css';
 import { useSelector, useDispatch } from 'react-redux';
 import {addItem} from '../redux/slices/cartSlice';
-import { FaArrowLeft } from 'react-icons/fa'; // Import the icon
-// import Sidebar and Sidebag components
 import SideBar from '../components/SideBar';
-import DashboardBag from '../components/DashboardBag'; // Assuming this is what Sidebag refers to
+import DashboardBag from '../components/DashboardBag'
+
+
 
 const ItemView = () => {
   const { id } = useParams(); // Get product ID from the URL parameter
   const product = useSelector((state) =>
     state.products.items.find((product) => product.id === parseInt(id)) // Correct variable name
   ); // Find the product based on the ID
+
+
+  console.log(product)//test
   const dispatch = useDispatch(); // Initialize dispatch
 
   // Handle adding product to cart
@@ -24,16 +27,18 @@ const ItemView = () => {
   if (!product) {
     return <div>Product not found!</div>;
   }
-
+//className="sidebar"
   return (
+    <>
+   
     <div className="detail-page">
-      <SideBar className="sidebar" />
+    <SideBar className="sidebar"/>
       <div className="product-page-section">
         <div className="product-img">
           <span className="back-text">
-            <FaArrowLeft className="back-icon" />
-            <Link to="/">Back</Link> <br />
+           <Link to="/"> Back </Link> 
           </span>
+          
           <div className="side-images">
             {/* Side images, these could be different angles of the product */}
             <img src={product.image} alt={product.name} />
@@ -42,7 +47,7 @@ const ItemView = () => {
           </div>
 
           {/* Main product image */}
-          <img src={product.image} alt={product.name} />
+          <img src={product.image} alt={product.name} className='main-image' />
           <div className="product-details">
             <h1 className="product-h1">{product.name}</h1>
             <h3 className="product-h3">{product.description}</h3>
@@ -68,6 +73,7 @@ const ItemView = () => {
       </div>
       <DashboardBag className="sidebag" /> {/* Assuming DashboardBag is Sidebag */}
     </div>
+    </>
   );
 };
 
