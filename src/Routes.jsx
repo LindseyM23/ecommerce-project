@@ -7,7 +7,7 @@ import CartPage from './pages/CartPage';
 import ContentSection from "./components/ContentSection";
 import ItemView from "./pages/ItemView";
 import DashboardBag from "./components/DashboardBag";
-import Checkout from "./components/Checkout";
+import Checkout from "./components/checkout";
 // import checkout from "./components/checkout";
 
 function AppRoutes() {
