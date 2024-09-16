@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux'; 
 import { useNavigate } from 'react-router-dom'; 
-import './styles/checkout.css';  // Ensure this path is correct
+import '../styles/checkout.css';  // Ensure this path is correct
 
 function Checkout() {
     const navigate = useNavigate();

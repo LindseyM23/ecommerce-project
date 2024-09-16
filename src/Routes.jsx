@@ -18,7 +18,7 @@ function AppRoutes() {
                     <Route path="/cart" element={<CartPage />} />
                     <Route path="/product/:id" element={<ItemView />} />
                     <Route path="/dashboard-bag" element={<DashboardBag />} />
-                    <Route path="/checkout" element={<Checkout />} />  // Ensure correct path
+                    <Route path="/checkout" element={<Checkout />} /> 
                 </Routes>
             </div>
         </Router>

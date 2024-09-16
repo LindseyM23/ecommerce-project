@@ -4,7 +4,7 @@ import { addItem, removeFromCart } from '../redux/slices/cartSlice';
 import { useNavigate } from 'react-router-dom';
 import SideBar from '../components/SideBar';
 import '../styles/CartPage.css';
-import DashboardBag from '../components/DashboardBag'; 
+// import DashboardBag from '../components/DashboardBag'; 
 
 const CartItem = ({ item, onUpdateQuantity, onRemove }) => {
   return (
