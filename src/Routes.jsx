@@ -6,6 +6,7 @@ import ContentSection from "./components/ContentSection";
 import ItemView from "./pages/ItemView";
 import DashboardBag from "./components/DashboardBag";
 import Checkout from './pages/Checkout';
+import Address from "./pages/Address";
 
 
 function AppRoutes() {
@@ -19,6 +20,7 @@ function AppRoutes() {
                     <Route path="/product/:id" element={<ItemView />} />
                     <Route path="/dashboard-bag" element={<DashboardBag />} />
                     <Route path="/checkout" element={<Checkout />} /> 
+                    <Route path="/Address" element={<Address/>} />
                 </Routes>
             </div>
         </Router>
