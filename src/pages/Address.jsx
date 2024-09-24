@@ -1,7 +1,7 @@
 import React, { useState } from "react"; 
 import { useDispatch, useSelector } from 'react-redux';
 import { setAddress, toggleSaveAsDefault } from '../state/addressSlice';
-import '../Styles/address.css';
+import '../styles/Address.css';
 import { FaLock } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate for navigation
 
