@@ -7,6 +7,9 @@ import ItemView from "./pages/ItemView";
 import DashboardBag from "./components/DashboardBag";
 import Checkout from './pages/Checkout';
 import Address from "./pages/Address";
+import PaymentMethod from "./components/PaymentMethod";  
+import ShippingAdd from "./components/shippingAdd"; 
+
 
 
 function AppRoutes() {
@@ -19,8 +22,12 @@ function AppRoutes() {
                     <Route path="/cart" element={<CartPage />} />
                     <Route path="/product/:id" element={<ItemView />} />
                     <Route path="/dashboard-bag" element={<DashboardBag />} />
-                    <Route path="/checkout" element={<Checkout />} /> 
-                    <Route path="/Address" element={<Address/>} />
+                    <Route path="/Checkout" element={<Checkout />} /> 
+                    <Route path="/address" element={<Address/>} />
+                    <Route path="/payment-method" element={<PaymentMethod />} />  
+                    <Route path="/shipping-add" element={<ShippingAdd />} />  
+
+
                 </Routes>
             </div>
         </Router>

@@ -57,7 +57,7 @@ const CartPage = () => {
   ).toFixed(2);
 
   const handleCheckout = () => {
-    navigate('/checkout');
+    navigate('/Checkout');
   };
 
   return (
