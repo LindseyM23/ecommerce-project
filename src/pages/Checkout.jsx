@@ -59,7 +59,7 @@ function ShippingAddress({ address, onChange }) {
                         <p>{address.street}</p>
                         <p>{address.city}, {address.zip}</p>
                         <p>{address.country}</p>
-                        
+                        <button onClick={onChange}>Change</button>
                     </div>
                 ) : (
                     <>
@@ -86,7 +86,7 @@ function PaymentMethod({ paymentMethod={}, onChange }) {
                     <div>
                         <p>Card Number: **** **** **** {lastFourDigits}</p>
                         <p>Expiry Date: {paymentMethod.expiryDate}</p>
-                        
+                        <button onClick={onChange}>Change</button>
                     </div>
                 ) : (
                     <>
