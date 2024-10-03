@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux'; // Import useDispatch for Redux actions
 import { useNavigate } from 'react-router-dom'; // Import useNavigate to programmatically navigate
+import { updatePaymentMethod } from '../redux/slices/checkoutSlice'; // Adjust the path based on your file structure
+
 
 const PaymentMethod = () => {
     const dispatch = useDispatch();
@@ -13,18 +15,39 @@ const PaymentMethod = () => {
         cvv: ''
     });
 
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setPaymentMethod({ ...paymentMethod, [name]: value });
-    };
+    // const handleChange = (e) => {
+    //     const { name, value } = e.target;
+    //     setPaymentMethod({ ...paymentMethod, [name]: value });
+    // };
+
+    // const handleSubmit = (e) => {
+    //     e.preventDefault();
+    //     // Dispatch the updated payment method to Redux store
+    //     dispatch(updatePaymentMethod(paymentMethod)); 
+    //     // Navigate back to the Checkout page
+    //     navigate('/checkout');
+    // };
+
+    
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Dispatch the updated payment method to Redux store
-        dispatch({ type: 'UPDATE_PAYMENT_METHOD', payload: paymentMethod });
-        // Navigate back to the Checkout page
-        navigate('/checkout');
+
+        // Update the Redux store or component state
+       
+        dispatch(updatePaymentMethod(paymentMethod)); // Dispatch to Redux store
+        navigate('/checkout'); // Navigate back to checkout
+
+        console.log('Submitted Payment Method:', paymentMethod);
     };
+
+    const handleChange = (e) => {
+        setPaymentMethod({
+            ...paymentMethod,
+            [e.target.name]: e.target.value,
+        });
+    };
+
 
     return (
         <div className="payment-method-form">

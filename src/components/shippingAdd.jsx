@@ -1,13 +1,14 @@
-import React, { useState, useEffect} from 'react';
-import { useDispatch,useSelector } from 'react-redux'; // Import useDispatch for Redux actions
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux'; // Import useDispatch for Redux actions
 import { useNavigate } from 'react-router-dom'; // Import useNavigate to programmatically navigate
+import { updateAddress } from '../redux/slices/checkoutSlice'; // Adjust the path as necessary
 
 
 const ShippingAdd = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
-    const existingAddress = useSelector((state) => state.user?.address || {});
+    // const existingAddress = useSelector((state) => state.user?.address || {});
 
     
     const [address, setAddress] = useState({
@@ -19,24 +20,47 @@ const ShippingAdd = () => {
         country: ''
     });
 
-    useEffect(() => {
-        if (existingAddress) {
-            setAddress(existingAddress);
-        }
-    }, [existingAddress]);
+    // useEffect(() => {
+    //     if (existingAddress) {
+    //         setAddress(existingAddress);
+    //     }
+    // }, [existingAddress]);
 
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setAddress({ ...address, [name]: value });
-    };
+    // const handleChange = (e) => {
+    //     const { name, value } = e.target;
+    //     setAddress({ ...address, [name]: value });
+    // };
+
+    // const handleSubmit = (e) => {
+    //     e.preventDefault();
+    //     // Dispatch the updated address to Redux store
+    //     dispatch(updateAddress(address));
+    //     // Navigate back to the Checkout page
+    //     navigate('/checkout');
+    // };
+
+   
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Dispatch the updated address to Redux store
-        dispatch({ type: 'UPDATE_ADDRESS', payload: address });
-        // Navigate back to the Checkout page
-        navigate('/checkout');
+
+        // Update the Redux store or component state
+        dispatch({ type: 'updateAdress', payload: address });
+        dispatch(updateAddress(address)); // Dispatch to Redux store
+        navigate('/checkout'); // Navigate back to checkout
+
+
+        console.log('Submitted Address:', address);
     };
+
+    const handleChange = (e) => {
+        setAddress({
+            ...address,
+            [e.target.name]: e.target.value,
+        });
+    };
+
+
 
 
 

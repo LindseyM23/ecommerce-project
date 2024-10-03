@@ -1,53 +1,33 @@
 // checkoutSlice.js
-import { UPDATE_ADDRESS, UPDATE_PAYMENT_METHOD } from './actionTypes'; // Ensure path is correct
+
+import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-    address: {
-        name: '',
-        street: '',
-        city: '',
-        state: '',
-        zip: '',
-        country: ''
-    },
-    paymentMethod: {
-        cardNumber: '',
-        cardHolder: '',
-        expiryDate: '',
-        cvv: '',
-        giftCardBalance: 0
-    },
+    address:null,
+    paymentMethod:null,
     cart: {
-        items: [
-            {
-                id: 1,
-                name: 'Product 1',
-                price: 29.99,
-                quantity: 1,
-                image: 'https://example.com/image1.jpg', // Ensure the image is included here
-            },
-            // More items...
-        ],
-        totalPrice: 0, // Ensure this is calculated correctly
+        items: [], 
     },
 };
 
-function checkoutSlice(state = initialState, action) {
-    switch (action.type) {
-        case UPDATE_ADDRESS:
-            return {
-                ...state,
-                address: action.payload,
-            };
-        case UPDATE_PAYMENT_METHOD:
-            return {
-                ...state,
-                paymentMethod: action.payload,
-            };
-        default:
-            return state;
-    }
-}
+const checkoutSlice = createSlice({
+    name: 'checkout',
+    initialState,
+    reducers: {
+        updateAddress: (state, action) => {
+            state.address = action.payload;
+        },
+        updatePaymentMethod: (state, action) => {
+            state.paymentMethod = action.payload;
+        },
+        updateCart: (state, action) => {
+            state.cart = action.payload;
+        },
+    },
+});
 
-export default checkoutSlice;
+export const { updateAddress, updatePaymentMethod, updateCart } = checkoutSlice.actions;
+
+
+export default checkoutSlice.reducer;
 
