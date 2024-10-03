@@ -8,8 +8,10 @@ function Checkout() {
     const navigate = useNavigate();
     const address = useSelector((state) => state.checkout.address || {});
     const paymentMethod = useSelector((state) => state.checkout.paymentMethod || {});
-    const cartItems = useSelector((state) => state.cart.items || []);
-    const totalPrice = useSelector((state) => state.cart.totalPrice || 0);
+    const cartItems = useSelector((state) => state.checkout.cart.items || []);
+    const totalPrice = useSelector((state) => state.checkout.cart.totalPrice || 0);
+
+    console.log('Cart Items:', cartItems); // Debugging line
 
     const handlePlaceOrder = () => {
         navigate('/payment-method');
@@ -96,6 +98,7 @@ function ReviewYourBag({ cartItems, totalPrice }) {
                 <>
                     {cartItems.map((item) => (
                         <div key={item.id} className="cart-item">
+                             <img src={item.image} alt={item.name} style={{ width: '50px', height: 'auto' }} />
                             <p>{item.name}</p>
                             <p>${item.price.toFixed(2)}</p>
                             <div className="quantity">

@@ -1,11 +1,14 @@
-import React, { useState } from 'react';
-import { useDispatch } from 'react-redux'; // Import useDispatch for Redux actions
+import React, { useState, useEffect} from 'react';
+import { useDispatch,useSelector } from 'react-redux'; // Import useDispatch for Redux actions
 import { useNavigate } from 'react-router-dom'; // Import useNavigate to programmatically navigate
 
 
 const ShippingAdd = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
+
+    const existingAddress = useSelector((state) => state.user?.address || {});
+
     
     const [address, setAddress] = useState({
         name: '',
@@ -15,6 +18,12 @@ const ShippingAdd = () => {
         zip: '',
         country: ''
     });
+
+    useEffect(() => {
+        if (existingAddress) {
+            setAddress(existingAddress);
+        }
+    }, [existingAddress]);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -28,6 +37,8 @@ const ShippingAdd = () => {
         // Navigate back to the Checkout page
         navigate('/checkout');
     };
+
+
 
     return (
         <div className="shipping-address-form">
