@@ -76,7 +76,7 @@ function ShippingAddress({ address, onChange }) {
 function PaymentMethod({ paymentMethod={}, onChange }) {
     console.log('Payment Method:', paymentMethod); // Debugging line
     const lastFourDigits = paymentMethod?.cardNumber ? paymentMethod.cardNumber.slice(-4) : '####';
-    const cardType = paymentMethod?.cardNumber ? getCardType(paymentMethod.cardNumber) : 'Type not provided';
+ 
     
 
     return (
@@ -99,21 +99,21 @@ function PaymentMethod({ paymentMethod={}, onChange }) {
 
 
 // Helper function to determine card type based on card number
-function getCardType(number) {
-    const re = {
-        Visa: /^4/,
-        MasterCard: /^5[1-5]/,
-        AMEX: /^3[47]/,
-        Discover: /^6(?:011|5)/,
-    };
+// function getCardType(number) {
+//     const re = {
+//         Visa: /^4/,
+//         MasterCard: /^5[1-5]/,
+//         AMEX: /^3[47]/,
+//         Discover: /^6(?:011|5)/,
+//     };
 
-    for (const card in re) {
-        if (re[card].test(number)) {
-            return card;
-        }
-    }
-    return 'Unknown';
-}
+//     for (const card in re) {
+//         if (re[card].test(number)) {
+//             return card;
+//         }
+//     }
+//     return 'Unknown';
+// }
 
 
 
