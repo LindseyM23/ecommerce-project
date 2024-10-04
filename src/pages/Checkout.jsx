@@ -6,13 +6,26 @@ import { useNavigate } from 'react-router-dom';
 // Main CheckoutPage component
 function Checkout() {
     const navigate = useNavigate();
-    const address = useSelector((state) => state.checkout.address || {});
-    const paymentMethod = useSelector((state) => state.checkout.paymentMethod || {});
-    const cartItems = useSelector((state) => state.cart.items || []);
-    const totalPrice = useSelector((state) => state.cart.totalPrice || 0);
+    const address = useSelector((state) => state.checkout.address);
+    const paymentMethod = useSelector((state) => state.checkout.paymentMethod);
+    const cartItems = useSelector((state) => state.cart.cartItems || [] );
+
+    const totalPrice = cartItems.reduce((acc, item) => acc + (item.price * item.quantity), 0);  // Safely reduce cartItems
+    ;
+console.log('Checkout State:', {
+    address,
+    paymentMethod,
+    cartItems,
+});
+
+
+
+
+
+    console.log('Cart Items:', cartItems); // Debugging line
 
     const handlePlaceOrder = () => {
-        navigate('/payment-method');
+        alert('Order Placed')
     };
 
     const handleChangeShipping = () => {
@@ -20,7 +33,8 @@ function Checkout() {
     };
 
     const handleChangePayment = () => {
-        navigate('/payment-method'); // Navigate to PaymentMeth component
+        // navigate('/payment-method'); // Navigate to PaymentMeth component
+        navigate('/payment-method');
     };
 
     return (
@@ -39,36 +53,50 @@ function ShippingAddress({ address, onChange }) {
     return (
         <div className="shipping-address">
             <h2>Shipping Address</h2>
-            <p>{address.name || 'Name not provided'}</p>
-            <p>
-                {address.street || 'Street not provided'}, {address.city || 'City not provided'}, {address.state || 'State not provided'}, {address.zip || 'ZIP not provided'}, {address.country || 'Country not provided'}
-            </p>
-            <button onClick={onChange}>Change</button>
-        </div>
-    );
-}
+                   {address ? (
+                    <div>
+                        <p>{address.name}</p>
+                        <p>{address.street}</p>
+                        <p>{address.city}, {address.zip}</p>
+                        <p>{address.country}</p>
+                        <button onClick={onChange}>Change</button>
+                    </div>
+                ) : (
+                    <>
+                    <p>No address provided.</p>
+                    <button onClick={onChange}>Change</button>
+                    </>
+                )}
+            </div>
+    )};
+
+
 
 // PaymentMethod component
-function PaymentMethod({ paymentMethod, onChange }) {
-    const lastFourDigits = paymentMethod.cardNumber ? paymentMethod.cardNumber.slice(-4) : '####';
-    const cardType = paymentMethod.cardNumber ? getCardType(paymentMethod.cardNumber) : 'Type not provided';
+function PaymentMethod({ paymentMethod={}, onChange }) {
+    console.log('Payment Method:', paymentMethod); // Debugging line
+    const lastFourDigits = paymentMethod?.cardNumber ? paymentMethod.cardNumber.slice(-4) : '####';
+    const cardType = paymentMethod?.cardNumber ? getCardType(paymentMethod.cardNumber) : 'Type not provided';
+    
 
     return (
         <div className="payment-method">
             <h2>Payment Method</h2>
-            <p>
-                <i className="fa fa-credit-card"></i> {cardType} ending in {lastFourDigits}
-            </p>
-            <p>
-                <i className="fa fa-gift"></i> ${paymentMethod.giftCardBalance || '0.00'} gift card balance
-            </p>
-            <label>
-                <input type="checkbox" checked readOnly /> Billing address same as Shipping Address
-            </label>
-            <button onClick={onChange}>Change</button>
-        </div>
-    );
-}
+                  {paymentMethod ? (
+                    <div>
+                        <p>Card Number: **** **** **** {lastFourDigits}</p>
+                        <p>Expiry Date: {paymentMethod.expiryDate}</p>
+                        <button onClick={onChange}>Change</button>
+                    </div>
+                ) : (
+                    <>
+                    <p>No payment method provided.</p>
+                    <button onClick={onChange}>Change</button>
+                    </>
+                )}
+            </div>
+    )};
+
 
 // Helper function to determine card type based on card number
 function getCardType(number) {
@@ -87,32 +115,36 @@ function getCardType(number) {
     return 'Unknown';
 }
 
-// ReviewYourBag component
-function ReviewYourBag({ cartItems, totalPrice }) {
+
+
+const ReviewYourBag = () => {
+    // Assuming cartItems is coming from the Redux store
+    const cartItems = useSelector((state) => state.cart?.cartItems || []);
+
+    // Check the length safely
+    const itemCount = cartItems.length;
+
     return (
-        <div className="review-your-bag">
-            <h2>Review Your Bag</h2>
-            {cartItems.length > 0 ? (
-                <>
+        <div>
+        <h2>Your Bag</h2>
+            {itemCount > 0 ? (
+                <ul>
                     {cartItems.map((item) => (
-                        <div key={item.id} className="cart-item">
-                            <p>{item.name}</p>
-                            <p>${item.price.toFixed(2)}</p>
-                            <div className="quantity">
-                                <p>Quantity: {item.quantity}</p>
-                            </div>
-                        </div>
+                        <>
+                         {/* key={item.id}> */}
+                            <img src={item.image} alt={item.name} width="50" />
+                            <span>{item.name} x {item.quantity}</span>
+                        </>
                     ))}
-                    <div className="review-total">
-                        <h3>Total: ${totalPrice.toFixed(2)}</h3>
-                    </div>
-                </>
+                </ul>
             ) : (
-                <p>Bag is empty</p>
+                <p>Your bag is empty.</p>
             )}
         </div>
     );
-}
+};
+
+
 
 // OrderSummary component
 function OrderSummary({ totalPrice }) {
