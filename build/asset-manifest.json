@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/static/css/main.09450447.css",
+    "main.js": "/static/js/main.5f61853c.js",
+    "static/media/watchProduct.png": "/static/media/watchProduct.089fd2f31df497f0d04f.png",
+    "static/media/redphone.png": "/static/media/redphone.7270be0f24bd4da66768.png",
+    "static/media/blackphone.png": "/static/media/blackphone.2266780cbfd2bc4baf98.png",
+    "static/media/bluephone.png": "/static/media/bluephone.bf50c9e9bf00e816bed5.png",
+    "static/media/whitephone.png": "/static/media/whitephone.271d1032f4ddba3ae0cc.png",
+    "static/media/headsets.png": "/static/media/headsets.02a542923b48eca174b5.png",
+    "index.html": "/index.html",
+    "main.09450447.css.map": "/static/css/main.09450447.css.map",
+    "main.5f61853c.js.map": "/static/js/main.5f61853c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.09450447.css",
+    "static/js/main.5f61853c.js"
+  ]
+}
