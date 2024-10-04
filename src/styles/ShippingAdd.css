@@ -47,6 +47,7 @@
     cursor: pointer;
     transition: background-color 0.3s;
     font-family: Arial, sans-serif;
+    width: 25%;
 }
 
 .shipping-address-form button:hover {
