@@ -1,75 +1,101 @@
-/* Main container styling for the checkout page */
+
 .checkout-page {
     font-family: 'Arial', sans-serif;
     max-width: 900px;
-    margin: 20px auto;
-    padding: 20px;
-    border-radius: 8px;
+    margin: 30px auto;
+    padding: 25px;
+    border-radius: 10px;
     background-color: #f9f9f9;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
 }
 
-/* Styling for the main heading (if used) */
+.checkout-page:hover {
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+}
+
+
 h1 {
     text-align: center;
     color: #333;
-    margin-bottom: 20px;
+    font-size: 28px;
+    margin-bottom: 25px;
+    letter-spacing: 1px;
 }
 
-/* Shipping address section styling */
+
 .shipping-address {
-    margin-bottom: 20px;
+    margin-bottom: 25px;
+    border: 1px solid #ccc;
+    border-radius: 8px; 
+    padding: 20px;
 }
 
 .shipping-address h2 {
-    font-size: 20px;
-    margin-bottom: 10px;
+    font-size: 22px;
+    margin-bottom: 15px;
     color: #333;
 }
 
-/* Input fields in the shipping address section */
+
 .shipping-address input {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s ease;
 }
 
-/* Payment method section styling */
+.shipping-address input:focus {
+    border-color: black;
+    box-shadow: 0 0 8px black;
+}
+
+
 .payment-method {
-    margin-bottom: 20px;
+    margin-bottom: 25px;
+    border: 1px solid #ccc;
+    border-radius: 8px; 
+    padding: 20px; 
 }
 
 .payment-method h2 {
-    font-size: 20px;
-    margin-bottom: 10px;
+    font-size: 22px;
+    margin-bottom: 15px;
     color: #333;
 }
 
-/* Select dropdown in the payment method section */
 .payment-method select {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s ease;
 }
 
-/* Cart items section styling */
+.payment-method select:focus {
+    border-color: black;
+    box-shadow: 0 0 8px black;
+}
+
+
 .cart-items {
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
 .cart-items h2 {
-    font-size: 20px;
-    margin-bottom: 10px;
+    font-size: 22px;
+    margin-bottom: 15px;
     color: #333;
 }
 
-/* Individual cart item styling */
+
 .cart-item {
     display: flex;
     justify-content: space-between;
-    padding: 10px 0;
+    padding: 12px 0;
     border-bottom: 1px solid #ccc;
 }
 
@@ -78,49 +104,57 @@ h1 {
     font-size: 16px;
 }
 
-/* Quantity input in cart items */
+
 .cart-item input[type="number"] {
     width: 60px;
-    padding: 5px;
+    padding: 8px;
     text-align: center;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 8px;
+    font-size: 16px;
 }
 
-/* Order summary section styling */
+
 .order-summary {
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    padding: 25px;
+    border: 2px solid #ccc;
+    border-radius: 8px; 
     background-color: #fff;
 }
 
 .order-summary h2 {
-    font-size: 20px;
-    margin-bottom: 10px;
+    font-size: 22px;
+    margin-bottom: 15px;
     color: #333;
 }
 
 .order-summary p {
     font-size: 18px;
-    margin: 0;
+    margin: 5px 0;
+    color: #666;
 }
 
-/* Styling for buttons */
+
 button {
     display: block;
-    width: 100%;
-    padding: 15px;
-    font-size: 18px;
+    width: 25%;
+    padding: 10px; 
+    font-size: 16px; 
     color: #fff;
-    background-color: #333;
+    background-color: black;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
-    margin-top: 20px;
+    margin-top: 2px;
+    transition: background-color 0.3s ease;
 }
 
-/* Button hover effect */
+
 button:hover {
-    background-color: #555;
+    background-color: green;
+}
+
+
+* {
+    transition: all 0.3s ease;
 }

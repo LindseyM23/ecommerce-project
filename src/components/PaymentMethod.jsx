@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux'; // Import useDispatch for Redux actions
 import { useNavigate } from 'react-router-dom'; // Import useNavigate to programmatically navigate
 import { updatePaymentMethod } from '../redux/slices/checkoutSlice'; // Adjust the path based on your file structure
-
+import '../styles/PaymentMethod.css'; 
 
 const PaymentMethod = () => {
     const dispatch = useDispatch();
