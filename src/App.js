@@ -1,3 +1,4 @@
+import React from 'react'; // Add this line
 import './index.css';
 // import Dashboard from './pages/Dashboard';
 import Routes from './Routes';
@@ -5,8 +6,7 @@ import Routes from './Routes';
 
 function App() {
   return (
-
-    <Routes/>
+    <Routes />
   );
 }
 
