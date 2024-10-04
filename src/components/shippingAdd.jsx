@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux'; // Import useDispatch for Redux actions
 import { useNavigate } from 'react-router-dom'; // Import useNavigate to programmatically navigate
 import { updateAddress } from '../redux/slices/checkoutSlice'; // Adjust the path as necessary
-
+import '../styles/ShippingAdd.css'; 
 
 const ShippingAdd = () => {
     const dispatch = useDispatch();
